@@ -1,5 +1,16 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'me.tatarka.retrolambda'
+
+publish {
+    userOrg = 'scalated'
+    groupId = 'com.scalated.fireddroid'
+    artifactId = 'fired-droid'
+    publishVersion = '0.1.0'
+    desc = 'An easy-to-use Firebase on Android'
+    website = 'https://github.com/scalated/FiredDroid'
+    repository = "https://github.com/scalated/FiredDroid.git"
+}
 
 android {
     compileSdkVersion 23
