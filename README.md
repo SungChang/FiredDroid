@@ -48,10 +48,29 @@ FiredDroid is an easy-to-use [Firebase](https://firebase.google.com) wrapper on 
    ```
    
 ## Usage
-  ```java
-  Firebase firebase = new Firebase("https://example-xxxxx.firebaseio.com/).child("version");
-  FiredDroid.loadData(firebase, data -> {
-    String version = data.getValue();
-  });
-  ```
+  1. Here is an original Firebase sample code:
+    ```java
+    Firebase firebase = new Firebase("https://example-xxxxx.firebaseio.com/).child("version");
+    firebase.addListenerForSingleValueEvent(new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            String version = dataSnapshot.getValue();
+        }
+
+        @Override
+        public void onCancelled(FirebaseError firebaseError) {
+        
+        }
+    });
+    ```
+  
+  2. And, following code with FiredDroid is equivalent to above:
+    
+    (with Retrolambda)
+    ```java
+    Firebase firebase = new Firebase("https://example-xxxxx.firebaseio.com/).child("version");
+    FiredDroid.loadData(firebase, dataSnapshot -> {
+        String version = dataSnapshot.getValue();
+    });
+    ```
   
