@@ -52,7 +52,7 @@ FiredDroid is an easy-to-use [Firebase](https://firebase.google.com) wrapper on 
 ## Usage
   1. Here is an original Firebase sample code:
     ```java
-    Firebase firebase = new Firebase("https://example-xxxxx.firebaseio.com/).child("version");
+    Firebase firebase = new Firebase("https://example-xxxxx.firebaseio.com/").child("version");
     firebase.addListenerForSingleValueEvent(new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -69,7 +69,7 @@ FiredDroid is an easy-to-use [Firebase](https://firebase.google.com) wrapper on 
   2. And, following code with FiredDroid(with Retrolambda) is equivalent to above:
 
     ```java
-    Firebase firebase = new Firebase("https://example-xxxxx.firebaseio.com/).child("version");
+    Firebase firebase = new Firebase("https://example-xxxxx.firebaseio.com/").child("version");
     FiredDroid.loadData(firebase, dataSnapshot -> {
         String version = dataSnapshot.getValue();
     });
