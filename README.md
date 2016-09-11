@@ -2,12 +2,14 @@
 
 FiredDroid is an easy-to-use [Firebase](https://firebase.google.com) wrapper on Android.
 
-
 ## Table of Content
+
   1. [Installation](#installation)
   2. [Usage](#usage)
+  3. [License](#license)
 
 ## Installation
+
   1. Add the following dependency on your `app/build.gradle` file.
   
   ```groovy
@@ -64,13 +66,16 @@ FiredDroid is an easy-to-use [Firebase](https://firebase.google.com) wrapper on 
     });
     ```
   
-  2. And, following code with FiredDroid is equivalent to above:
-    
-    (with Retrolambda)
+  2. And, following code with FiredDroid(with Retrolambda) is equivalent to above:
+
     ```java
     Firebase firebase = new Firebase("https://example-xxxxx.firebaseio.com/).child("version");
     FiredDroid.loadData(firebase, dataSnapshot -> {
         String version = dataSnapshot.getValue();
     });
     ```
+    
+## License
+    
+
   
