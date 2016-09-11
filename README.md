@@ -76,7 +76,7 @@ FiredDroid is an easy-to-use [Firebase](https://firebase.google.com) wrapper on 
     ```
     
 ## License
-    ```
+    
     Copyright 2016 Steve Chang
     
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -90,7 +90,5 @@ FiredDroid is an easy-to-use [Firebase](https://firebase.google.com) wrapper on 
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-    
-    ```
 
   
