@@ -1,10 +1,9 @@
 package com.scalated.fireddroid;
 
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * Created by scalated on 9/10/16.
@@ -16,52 +15,52 @@ public class FiredDroid {
     }
 
     public interface CancelledListener {
-        void onCancelled(FirebaseError error);
+        void onCancelled(DatabaseError error);
     }
 
-    public static void loadData(Firebase firebase, final DataChangeListener d) {
-        firebase.addListenerForSingleValueEvent(new ValueEventListener() {
+    public static void loadData(DatabaseReference reference, final DataChangeListener d) {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 d.onDataChanged(dataSnapshot);
             }
 
             @Override
-            public void onCancelled(FirebaseError firebaseError) {
+            public void onCancelled(DatabaseError error) {
 
             }
         });
     }
 
-    public static void loadData(Firebase firebase, final DataChangeListener d, final CancelledListener c) {
-        firebase.addListenerForSingleValueEvent(new ValueEventListener() {
+    public static void loadData(DatabaseReference reference, final DataChangeListener d, final CancelledListener c) {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 d.onDataChanged(dataSnapshot);
             }
 
             @Override
-            public void onCancelled(FirebaseError firebaseError) {
-                c.onCancelled(firebaseError);
+            public void onCancelled(DatabaseError databaseError) {
+                c.onCancelled(databaseError);
             }
         });
     }
 
-    public static void addValueEventListener(Firebase firebase, final DataChangeListener d) {
-        firebase.addValueEventListener(new ValueEventListener() {
+    public static void addValueEventListener(DatabaseReference reference, final DataChangeListener d) {
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 d.onDataChanged(dataSnapshot);
             }
 
             @Override
-            public void onCancelled(FirebaseError firebaseError) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
         });
     }
 
-    public static void addValueEventListener(Firebase firebase, final DataChangeListener d,
+    public static void addValueEventListener(DatabaseReference firebase, final DataChangeListener d,
                                              final CancelledListener c) {
         firebase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -70,8 +69,8 @@ public class FiredDroid {
             }
 
             @Override
-            public void onCancelled(FirebaseError firebaseError) {
-                c.onCancelled(firebaseError);
+            public void onCancelled(DatabaseError databaseError) {
+                c.onCancelled(databaseError);
             }
         });
     }
