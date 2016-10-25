@@ -1,6 +1,7 @@
 #FiredDroid
 
 FiredDroid is an easy-to-use [Firebase](https://firebase.google.com) wrapper on Android.
+Just started working on this library, and it's primarily for myself. Not so much useful yet.
 
 ## Table of Content
 
@@ -13,6 +14,13 @@ FiredDroid is an easy-to-use [Firebase](https://firebase.google.com) wrapper on 
   1. Add the following dependency on your `app/build.gradle` file.
   
   ```groovy
+  allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+  }
+  ```
+  ```groovy
   dependencies {
     compile 'com.scalated.fireddroid:fired-droid:0.1.0'
   }
@@ -21,33 +29,6 @@ FiredDroid is an easy-to-use [Firebase](https://firebase.google.com) wrapper on 
   Please make sure you already have added "firebase-client-android" library to use Firebase with FiredDroid.
   
   2. I strong recommend you to use [Retrolambda](https://github.com/evant/gradle-retrolambda) with FiredDroid, but it's still optional.
-  
-  Add the following to your build.gradle
-   ```groovy
-   buildscript {
-      repositories {
-         mavenCentral()
-      }
-
-      dependencies {
-         classpath 'me.tatarka:gradle-retrolambda:3.3.0'
-      }
-   }
-
-   // Required because retrolambda is on maven central
-   repositories {
-      mavenCentral()
-   }
-
-   apply plugin: 'com.android.application' //or apply plugin: 'java'
-   apply plugin: 'me.tatarka.retrolambda'
-   ```
-   alternatively, you can use the new plugin syntax for gradle `2.1+`
-   ```groovy
-   plugins {
-      id "me.tatarka.retrolambda" version "3.3.0"
-   }
-   ```
    
 ## Usage
   1. Here is an original Firebase sample code:
