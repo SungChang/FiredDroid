@@ -22,7 +22,7 @@ Just started working on this library, and it's primarily for myself. Not so much
   ```
   ```groovy
   dependencies {
-    compile 'com.scalated.fireddroid:fired-droid:0.1.0'
+    compile 'com.scalated.fireddroid:fired-droid:0.1.2'
   }
   ```
   
