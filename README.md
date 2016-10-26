@@ -27,8 +27,6 @@ Just started working on this library, and it's primarily for myself. Not so much
   ```
   
   Please make sure you already have added "firebase-client-android" library to use Firebase with FiredDroid.
-  
-  2. I strong recommend you to use [Retrolambda](https://github.com/evant/gradle-retrolambda) with FiredDroid, but it's still optional.
    
 ## Usage
   1. Here is an original Firebase sample code:
@@ -47,7 +45,7 @@ Just started working on this library, and it's primarily for myself. Not so much
     });
     ```
   
-  2. And, following code with FiredDroid(with Retrolambda) is equivalent to above:
+  2. And, following code with FiredDroid is equivalent to above:
 
     ```java
     Firebase firebase = new Firebase("https://example-xxxxx.firebaseio.com/").child("version");
